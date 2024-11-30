@@ -1,0 +1,9 @@
+{% if cryptos_list %}
+    <ul>
+    {% for crypto in cryptos_list %}
+        <li>{{ crypto.symbol }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cryptos are available.</p>
+{% endif %}
