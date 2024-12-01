@@ -2,4 +2,4 @@
 cryptotracker/
 **/__pycache*/
 **/__pycache/**
-db.sqlite3
+.db.sqlite3
