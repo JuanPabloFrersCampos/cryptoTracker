@@ -1,3 +1,5 @@
 .vscode/
 cryptotracker/
-**/__*/
+**/__pycache*/
+**/__pycache/**
+db.sqlite3
