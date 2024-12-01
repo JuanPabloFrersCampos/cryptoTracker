@@ -11,7 +11,6 @@ class Operation(models.Model):
     cryptoQuantity = models.DecimalField(max_digits=20, decimal_places=8)
     operationValue = models.DecimalField(max_digits=8, decimal_places=2)
     isPurchase = models.BooleanField()
-    #class Meta:
-    #    abstract = True
     def __str__(self):
-        return self.symbol
+        symbol = '+' if self.isPurchase else '-'
+        return str(self.symbol) + ' ' + str(symbol) + str(self.operationValue)

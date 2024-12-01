@@ -5,5 +5,5 @@ from . import views
 
 urlpatterns = [
     path('cryptos/', views.indexCryptos),
-    path('compra/', views.venta)
+    path('operation/', views.operation)
 ]
