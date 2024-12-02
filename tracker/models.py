@@ -9,7 +9,7 @@ class Crypto(models.Model):
 class Operation(models.Model):
     symbol = models.ForeignKey(Crypto, on_delete=models.CASCADE)
     cryptoQuantity = models.DecimalField(max_digits=20, decimal_places=8)
-    operationValue = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.DecimalField(max_digits=20, decimal_places=8)
     isPurchase = models.BooleanField()
     def __str__(self):
         symbol = '+' if self.isPurchase else '-'
