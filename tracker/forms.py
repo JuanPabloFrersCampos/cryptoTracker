@@ -5,4 +5,4 @@ from .models import Operation
 class cryptoOperationForm(ModelForm):
     class Meta:
         model = Operation
-        fields = ["symbol", "cryptoQuantity", "operationValue", "isPurchase"]
+        fields = ["symbol", "cryptoQuantity", "isPurchase"]
