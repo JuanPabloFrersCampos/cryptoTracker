@@ -10,7 +10,7 @@ class Operation(models.Model):
     symbol = models.ForeignKey(Crypto, on_delete=models.CASCADE)
     cryptoQuantity = models.DecimalField(max_digits=20, decimal_places=8)
     price = models.DecimalField(max_digits=20, decimal_places=8)
-    isPurchase = models.BooleanField()
+    isSell = models.BooleanField()
     def __str__(self):
-        symbol = '+' if self.isPurchase else '-'
-        return str(self.symbol) + ' ' + str(symbol) + str(self.cryptoQuantity * self.price)
+        symbol = '-' if self.isSell else '+'
+        return str(self.symbol) + ' ' + str(symbol) + str(self.cryptoQuantity) + str(' ($') + str(self.cryptoQuantity * self.price) + str(')')
