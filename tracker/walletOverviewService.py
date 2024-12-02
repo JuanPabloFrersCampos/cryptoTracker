@@ -1,4 +1,5 @@
 import decimal
+from .externalCryptoPriceFetcher import ExternalCryptoPriceFetcher
 
 class WalletOverviewService():
     def process(self, allOperations):
@@ -6,11 +7,14 @@ class WalletOverviewService():
         for operationsGroupedByCrypto in allOperations:
             if not operationsGroupedByCrypto:
                 continue
+            symbol = operationsGroupedByCrypto[0].symbol
             amountAvailable = self.getAmountOfAvailableCrypto(operationsGroupedByCrypto)
             mediumCost = self.getMediumCost(operationsGroupedByCrypto)
-            walletOverview[operationsGroupedByCrypto[0].symbol] = {
+            actualMarketPrice = self.getActualMarketPrice(symbol)
+            walletOverview[symbol] = {
                 'amountAvailable': amountAvailable,
-                'mediumCost': mediumCost
+                'mediumCost': mediumCost,
+                'actualMarketPrice': actualMarketPrice
             }
         return walletOverview
 
@@ -33,3 +37,7 @@ class WalletOverviewService():
         if totalAmount == 0:
             return decimal.Decimal(0)
         return totalCost / totalAmount
+
+    def getActualMarketPrice(self, symbol):
+        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(str(symbol) + 'USDT')
+        return externalCryptoPriceFetcher.getPrice()

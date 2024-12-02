@@ -1,7 +1,7 @@
 {% if walletOverview %}
     <ul>
     {% for symbol, values in walletOverview.items %}
-        <li>{{ symbol }}: Available {{ values.amountAvailable }} - Medium cost {{ values.mediumCost }}</li>
+        <li>{{ symbol }}: Available {{ values.amountAvailable }} - Medium cost {{ values.mediumCost }} - Actual price {{ values.actualMarketPrice }}</li>
     {% endfor %}
     </ul>
 {% else %}
