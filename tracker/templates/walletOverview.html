@@ -1,0 +1,9 @@
+{% if walletOverview %}
+    <ul>
+    {% for symbol, values in walletOverview.items %}
+        <li>{{ symbol }}: Available {{ values.amountAvailable }} - Medium cost {{ values.mediumCost }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Wallet is empty.</p>
+{% endif %}

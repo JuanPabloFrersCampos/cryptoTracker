@@ -2,4 +2,6 @@
 cryptotracker/
 **/__pycache*/
 **/__pycache/**
+**/__pycache__
 .db.sqlite3
+**/migrations/**
