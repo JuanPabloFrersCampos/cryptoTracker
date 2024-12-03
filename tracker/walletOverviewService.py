@@ -8,17 +8,19 @@ class WalletOverviewService():
             if not operationsGroupedByCrypto:
                 continue
             symbol = operationsGroupedByCrypto[0].symbol
-            amountAvailable = self.getAmountOfAvailableCrypto(operationsGroupedByCrypto)
-            mediumCost = self.getMediumCost(operationsGroupedByCrypto)
+            amountOfHoldedCrypto = self.getCryptoHoldings(operationsGroupedByCrypto)
+            totalCost, totalProceeds = self.getTotalCostAndProceeds(operationsGroupedByCrypto)
             actualMarketPrice = self.getActualMarketPrice(symbol)
+            currentBalance = self.getCurrentBalance(amountOfHoldedCrypto, actualMarketPrice, totalCost, totalProceeds)
             walletOverview[symbol] = {
-                'amountAvailable': amountAvailable,
-                'mediumCost': mediumCost,
-                'actualMarketPrice': actualMarketPrice
+                'amountOfHoldedCrypto': amountOfHoldedCrypto,
+                'totalCost': totalCost,
+                'actualMarketPrice': actualMarketPrice,
+                'currentBalance': currentBalance
             }
         return walletOverview
 
-    def getAmountOfAvailableCrypto(self, operationsGroupedByCrypto):
+    def getCryptoHoldings(self, operationsGroupedByCrypto):
         availableCrypto = decimal.Decimal(0)
         for operation in operationsGroupedByCrypto:
             if operation.isSell:
@@ -27,17 +29,25 @@ class WalletOverviewService():
                 availableCrypto += decimal.Decimal(operation.cryptoQuantity)
         return availableCrypto
 
-    def getMediumCost(self, operationsGroupedByCrypto):
-        totalAmount = decimal.Decimal(0)
+    def getTotalCostAndProceeds(self, operationsGroupedByCrypto):
         totalCost = decimal.Decimal(0)
+        proceeds = decimal.Decimal(0)
+        holdings = decimal.Decimal(0)
         for operation in operationsGroupedByCrypto:
-            if not operation.isSell:
-                totalAmount += decimal.Decimal(operation.cryptoQuantity)
+            if operation.isSell:
+                costPerUnit = totalCost / holdings if holdings > 0 else decimal.Decimal(0)
+                totalCost -= costPerUnit * decimal.Decimal(operation.cryptoQuantity)
+                proceeds += decimal.Decimal(operation.cryptoQuantity) * decimal.Decimal(operation.price)
+                holdings -= decimal.Decimal(operation.cryptoQuantity)
+            else:
                 totalCost += decimal.Decimal(operation.cryptoQuantity) * decimal.Decimal(operation.price)
-        if totalAmount == 0:
-            return decimal.Decimal(0)
-        return totalCost / totalAmount
+                holdings += decimal.Decimal(operation.cryptoQuantity)
+        return totalCost, proceeds
 
     def getActualMarketPrice(self, symbol):
         externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(str(symbol) + 'USDT')
         return externalCryptoPriceFetcher.getPrice()
+    
+    def getCurrentBalance(self, amountOfHoldedCrypto, actualMarketPrice, totalCost, totalProceeds):
+        currentValue = decimal.Decimal(amountOfHoldedCrypto) * decimal.Decimal(actualMarketPrice)
+        return currentValue + totalProceeds - totalCost
