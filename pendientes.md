@@ -1,8 +1,15 @@
+Deuda técnica
 - Inyección de dependencias
 - Tests unitarios
 - Refactor de la wallet
-- Versionamiento de APIs
-- Volver más eficiente la wallet: se debe tardar mucho haciendo el GET a la API de cryptos
 - Handleo errores API externa
 
-- Lo mismo pero para acciones
+Performance
+- /wallet:
+  - Consumo API de Cryptos:
+    - Crear una task que corra cada N, fetchee el precio de los símbolos en la instancia y persista en memoria. Cuando se haga un GET a /wallet, usar este objeto.
+- Caché cryptos disponibles:
+  - Al consultar las cryptos creadas en la instancia, hacerlo contra un caché y no contra la BDD. Invalidar el caché al crear una nueva crypto.
+
+Investigación
+- Versionamiento de APIs
