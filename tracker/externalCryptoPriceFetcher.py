@@ -12,3 +12,8 @@ class ExternalCryptoPriceFetcher:
             return (response.json())["price"]
         else:
             print("Error:", response.status_code, response.text)
+
+    # def getCryptoSymbols(self):
+    #     api_url = 'https://api.api-ninjas.com/v1/cryptosymbols'.format(self.symbol)
+    #     response = requests.get(api_url, headers={'X-Api-Key': 'Ea+4rJb8CUaOu7dov3pSQA==WG3PQAgoqGgMjJmr'})
+    #     return response.json()

@@ -49,5 +49,7 @@ class WalletOverviewService():
         return externalCryptoPriceFetcher.getPrice()
     
     def getCurrentBalance(self, amountOfHoldedCrypto, actualMarketPrice, totalCost, totalProceeds):
+        if not actualMarketPrice:
+            return "Non available"
         currentValue = decimal.Decimal(amountOfHoldedCrypto) * decimal.Decimal(actualMarketPrice)
         return currentValue + totalProceeds - totalCost
