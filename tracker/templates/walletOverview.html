@@ -1,9 +1,12 @@
 {% if walletOverview %}
     <ul>
     {% for symbol, values in walletOverview.items %}
-        <li>{{ symbol }}: Available {{ values.amountOfHoldedCrypto }} - BALANCE {{ values.currentBalance }} - Actual price {{ values.actualMarketPrice }}</li>
+        {% if symbol != 'totalBalance' %}
+            <li>{{ symbol }}: Available {{ values.amountOfHoldedCrypto }} - BALANCE {{ values.currentBalance }} - Actual price {{ values.actualMarketPrice }}</li>
+        {% endif %}
     {% endfor %}
     </ul>
+    <p><strong>Total Balance:</strong> {{ walletOverview.totalBalance }}</p>
 {% else %}
     <p>Wallet is empty.</p>
 {% endif %}
