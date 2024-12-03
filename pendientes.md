@@ -7,7 +7,7 @@ Deuda técnica
 Performance
 - /wallet:
   - Consumo API de Cryptos:
-    - Crear una task que corra cada N, fetchee el precio de los símbolos en la instancia y persista en memoria. Cuando se haga un GET a /wallet, usar este objeto.
+    - Crear una task que corra cada N, fetchee el precio de los símbolos en la instancia y persista en memoria. Cuando se haga un GET a /wallet, usar este objeto. -> 3seg aprox ahora
 - Caché cryptos disponibles:
   - Al consultar las cryptos creadas en la instancia, hacerlo contra un caché y no contra la BDD. Invalidar el caché al crear una nueva crypto.
 
