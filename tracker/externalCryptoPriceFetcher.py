@@ -10,10 +10,8 @@ class ExternalCryptoPriceFetcher:
 
     def getPrice(self):
         if self.cached_cotization:
-            print ('Cache hit!')
             return self.cached_cotization
         else:
-            print ('External API Hit')
             api_url = 'https://api.api-ninjas.com/v1/cryptoprice?symbol={}'.format(self.symbol)
             response = requests.get(api_url, headers={'X-Api-Key': 'Ea+4rJb8CUaOu7dov3pSQA==WG3PQAgoqGgMjJmr'})
             if response.status_code == requests.codes.ok:
