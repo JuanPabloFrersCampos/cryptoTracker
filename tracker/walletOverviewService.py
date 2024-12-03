@@ -18,6 +18,7 @@ class WalletOverviewService():
                 'actualMarketPrice': actualMarketPrice,
                 'currentBalance': currentBalance
             }
+        walletOverview['totalBalance'] = self.getTotalBalance(walletOverview)
         return walletOverview
 
     def getCryptoHoldings(self, operationsGroupedByCrypto):
@@ -52,4 +53,12 @@ class WalletOverviewService():
         if not actualMarketPrice:
             return "Non available"
         currentValue = decimal.Decimal(amountOfHoldedCrypto) * decimal.Decimal(actualMarketPrice)
-        return currentValue + totalProceeds - totalCost
+        return round(currentValue + totalProceeds - totalCost, 2)
+    
+    def getTotalBalance(self, wallet):
+        totalBalance = 0
+        for cryptocurrency, details in wallet.items():
+            if details.get('currentBalance') == "Non available":
+                continue
+            totalBalance += details.get('currentBalance')
+        return totalBalance
