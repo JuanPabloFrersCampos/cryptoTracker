@@ -1,15 +1,24 @@
 from .models import Operation, Crypto
+from django.core.cache import cache
 
-class dao():
-    def get_operations_by_symbol(symbolName):
+class Dao():
+    def get_operations_by_symbol(self, symbolName):
         return Operation.objects.filter(symbol__symbol=symbolName)
 
-    @staticmethod
-    def get_all_symbols():
+    def get_all_symbols(self):
+        cryptoSymbols = cache.get('cryptoSymbols')
+        if cryptoSymbols:
+            return cryptoSymbols
+        else:
+            symbols = self.fetch_all_symbols()
+            cache.set('cryptoSymbols', symbols)
+            return symbols
+    
+    def fetch_all_symbols(self):
         return Crypto.objects.all()
     
-    def get_all_operations_grouping_by_symbol():
+    def get_all_operations_grouping_by_symbol(self):
         operationsBySimbol = []
-        for symbol in dao.get_all_symbols():
-            operationsBySimbol.append(dao.get_operations_by_symbol(symbol))
+        for symbol in self.get_all_symbols():
+            operationsBySimbol.append(self.get_operations_by_symbol(symbol))
         return operationsBySimbol

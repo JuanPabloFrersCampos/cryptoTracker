@@ -16,10 +16,10 @@ class ExternalCryptoPriceFetcher:
         response = requests.get(api_url, headers={'X-Api-Key': 'Ea+4rJb8CUaOu7dov3pSQA==WG3PQAgoqGgMjJmr'})
         if response.status_code == requests.codes.ok:
             price = response.json().get("price")
-            cache.set(self.cache_key, price, timeout=30)
+            cache.set(self.cache_key, price, timeout=35)
             return price
         else:
-            cache.set(self.cache_key, None, timeout=30) # Temporal para que no afecte NEXO
+            cache.set(self.cache_key, None, timeout=35) # Temporal para que no afecte NEXO
             print("Error:", response.status_code, response.text)
 
     # def getCryptoSymbols(self):

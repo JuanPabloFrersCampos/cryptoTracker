@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Crypto, Operation
 from django.template import loader
 from .forms import cryptoOperationForm
-from .dao import dao #inyectar
+from .dao import Dao #inyectar
 from .walletOverviewService import WalletOverviewService
 
 # Create your views here.
@@ -28,6 +28,7 @@ def operation(request):
     return render(request, "cryptoOperation.html", {"form": form})
 
 def wallet(request):
+    dao = Dao()
     operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
     walletOverviewService = WalletOverviewService()
     walletOverview = walletOverviewService.process(operationsBySimbol)
