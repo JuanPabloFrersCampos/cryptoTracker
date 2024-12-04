@@ -1,11 +1,11 @@
 from celery import shared_task
 from .externalCryptoPriceFetcher import ExternalCryptoPriceFetcher
-from .dao import dao
+from .dao import Dao
 
 @shared_task
 def fetchCryptoPricesBackgroundTask():
-    print('BT')
-    symbols = ['BTCUSDT', 'ETHUSDT']
+    dao = Dao()
+    symbols = dao.get_all_symbols()
     for symbol in symbols:
         externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(symbol=symbol)
         externalCryptoPriceFetcher.fetchPrices()
