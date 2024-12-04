@@ -3,6 +3,7 @@ Deuda técnica
 - Tests unitarios
 - Refactor de la wallet
 - Handleo errores API externa
+- Invalidar caché symbols al agregar una nueva crypto
 
 Performance
 
