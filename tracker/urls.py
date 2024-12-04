@@ -1,10 +1,8 @@
 from django.urls import path
-from . import views
-
-# Router
+from .views import IndexCryptosView, OperationView, WalletView
 
 urlpatterns = [
-    path('cryptos/', views.indexCryptos),
-    path('operation/', views.operation),
-    path('wallet/', views.wallet)
+    path('cryptos/', IndexCryptosView.as_view()),
+    path('operation/', OperationView.as_view()),
+    path('wallet/', WalletView.as_view()),
 ]

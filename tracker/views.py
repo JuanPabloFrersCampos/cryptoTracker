@@ -1,38 +1,32 @@
+from django.views import View
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import Crypto, Operation
-from django.template import loader
+from django.http import HttpResponse
+from .models import Crypto
 from .forms import cryptoOperationForm
-from .dao import Dao #inyectar
+from .dao import Dao
 from .walletOverviewService import WalletOverviewService
 
-# Create your views here.
-# Views = HTTP Handlers
+class IndexCryptosView(View):
+    def get(self, request):
+        cryptos_list = Crypto.objects.all()
+        return render(request, "availableCryptos.html", {"cryptos_list": cryptos_list})
 
-def indexCryptos(request):
-    cryptos_list = Crypto.objects.all()
-    template = loader.get_template("availableCryptos.html")
-    context = {
-        "cryptos_list": cryptos_list
-    }
-    return HttpResponse(template.render(context, request))
+class OperationView(View):
+    def get(self, request):
+        form = cryptoOperationForm()
+        return render(request, "cryptoOperation.html", {"form": form})
 
-def operation(request):
-    if request.method == 'POST':
+    def post(self, request):
         form = cryptoOperationForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponse('Created')
-    else:
-        form = cryptoOperationForm()
-    return render(request, "cryptoOperation.html", {"form": form})
+        return render(request, "cryptoOperation.html", {"form": form})
 
-def wallet(request):
-    dao = Dao()
-    operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
-    walletOverviewService = WalletOverviewService()
-    walletOverview = walletOverviewService.process(operationsBySimbol)
-    context = {
-        "walletOverview": walletOverview
-    }
-    return render(request, "walletOverview.html", context)
+class WalletView(View):
+    def get(self, request):
+        dao = Dao()
+        walletOverviewService = WalletOverviewService()
+        operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
+        walletOverview = walletOverviewService.process(operationsBySimbol)
+        return render(request, "walletOverview.html", {"walletOverview": walletOverview})
