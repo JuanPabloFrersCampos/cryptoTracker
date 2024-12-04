@@ -7,5 +7,5 @@ def fetchCryptoPricesBackgroundTask():
     dao = Dao()
     symbols = dao.get_all_symbols()
     for symbol in symbols:
-        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(symbolPair=str(symbol) + 'USDT')
+        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(symbol = symbol)
         externalCryptoPriceFetcher.fetchPrices()
