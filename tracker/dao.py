@@ -10,11 +10,11 @@ class Dao():
         if cryptoSymbols:
             return cryptoSymbols
         else:
-            symbols = self.fetch_all_symbols()
+            symbols = self.__fetch_all_symbols()
             cache.set('cryptoSymbols', symbols)
             return symbols
     
-    def fetch_all_symbols(self):
+    def __fetch_all_symbols(self):
         return Crypto.objects.all()
     
     def get_all_operations_grouping_by_symbol(self):
