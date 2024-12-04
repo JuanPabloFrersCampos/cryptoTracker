@@ -2,7 +2,9 @@ from django.views import View
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Crypto
+import json
 from .forms import cryptoOperationForm
+from .decimalEncoder import DecimalEncoder
 from .dao import Dao
 from .walletOverviewService import WalletOverviewService
 
@@ -30,3 +32,14 @@ class WalletView(View):
         operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
         walletOverview = walletOverviewService.process(operationsBySimbol)
         return render(request, "walletOverview.html", {"walletOverview": walletOverview})
+    
+class WalletViewApi(View):
+    def get(self, request):
+        dao = Dao()
+        walletOverviewService = WalletOverviewService()
+        operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
+        walletOverview = walletOverviewService.process(operationsBySimbol)
+        return HttpResponse(
+            json.dumps(walletOverview, cls=DecimalEncoder),
+            content_type="application/json"
+        )

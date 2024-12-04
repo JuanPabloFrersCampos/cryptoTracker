@@ -12,7 +12,7 @@ class WalletOverviewService():
             totalCost, totalProceeds = self.getTotalCostAndProceeds(operationsGroupedByCrypto)
             actualMarketPrice = self.getActualMarketPrice(symbol)
             currentBalance = self.getCurrentBalance(amountOfHoldedCrypto, actualMarketPrice, totalCost, totalProceeds)
-            walletOverview[symbol] = {
+            walletOverview[str(symbol)] = { # Hay forma de no castearlo?
                 'amountOfHoldedCrypto': amountOfHoldedCrypto,
                 'totalCost': totalCost,
                 'actualMarketPrice': actualMarketPrice,
