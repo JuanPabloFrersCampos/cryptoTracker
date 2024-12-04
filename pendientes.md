@@ -12,7 +12,8 @@ Performance
 
 Investigación
 - Versionamiento de APIs
-
+- Como veo que está guardado en el caché
+- Más info de las BT registradas y como trackearlas
 
 HECHO:
 - /wallet:
