@@ -46,7 +46,7 @@ class WalletOverviewService():
         return totalCost, proceeds
 
     def getActualMarketPrice(self, symbol):
-        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(str(symbol) + 'USDT')
+        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(symbolPair=str(symbol) + 'USDT')
         return externalCryptoPriceFetcher.getPrice()
     
     def getCurrentBalance(self, amountOfHoldedCrypto, actualMarketPrice, totalCost, totalProceeds):
