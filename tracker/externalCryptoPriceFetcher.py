@@ -9,18 +9,18 @@ class ExternalCryptoPriceFetcher:
         self.cached_cotization = cache.get(self.cache_key)
 
     def getPrice(self):
-        if self.cached_cotization:
-            return self.cached_cotization
+        return self.cached_cotization
+            
+    def fetchPrices(self):
+        api_url = 'https://api.api-ninjas.com/v1/cryptoprice?symbol={}'.format(self.symbol)
+        response = requests.get(api_url, headers={'X-Api-Key': 'Ea+4rJb8CUaOu7dov3pSQA==WG3PQAgoqGgMjJmr'})
+        if response.status_code == requests.codes.ok:
+            price = response.json().get("price")
+            cache.set(self.cache_key, price, timeout=30)
+            return price
         else:
-            api_url = 'https://api.api-ninjas.com/v1/cryptoprice?symbol={}'.format(self.symbol)
-            response = requests.get(api_url, headers={'X-Api-Key': 'Ea+4rJb8CUaOu7dov3pSQA==WG3PQAgoqGgMjJmr'})
-            if response.status_code == requests.codes.ok:
-                price = response.json().get("price")
-                cache.set(self.cache_key, price, timeout=30)
-                return price
-            else:
-                cache.set(self.cache_key, None, timeout=30) # Temporal para que no afecte NEXO
-                print("Error:", response.status_code, response.text)
+            cache.set(self.cache_key, None, timeout=30) # Temporal para que no afecte NEXO
+            print("Error:", response.status_code, response.text)
 
     # def getCryptoSymbols(self):
     #     api_url = 'https://api.api-ninjas.com/v1/cryptosymbols'.format(self.symbol)

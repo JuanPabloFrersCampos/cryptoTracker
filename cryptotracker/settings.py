@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tracker'
+    'tracker',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -50,12 +51,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# revisar si no esta´dem a´s
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
         'LOCATION': 'redis://127.0.0.1:6379/1',
     }
 }
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
 
 ROOT_URLCONF = 'cryptotracker.urls'
 
