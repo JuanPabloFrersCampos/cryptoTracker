@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from .models import Crypto
 import json
 from .forms import cryptoOperationForm
-from .decimalEncoder import DecimalEncoder
 from .dao import Dao
 from .walletOverviewService import WalletOverviewService
 
@@ -40,6 +39,6 @@ class WalletViewApi(View):
         operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
         walletOverview = walletOverviewService.process(operationsBySimbol)
         return HttpResponse(
-            json.dumps(walletOverview, cls=DecimalEncoder),
+            json.dumps(walletOverview),
             content_type="application/json"
         )

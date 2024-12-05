@@ -19,7 +19,7 @@ class ExternalCryptoPriceFetcher:
         api_url = 'https://api.coinbase.com/v2/prices/{}/spot'.format(symbolPair)
         response = requests.get(api_url)
         if response.status_code == requests.codes.ok:
-            price = response.json().get("data", {}).get("amount")
+            price = float(response.json().get("data", {}).get("amount"))
             cache.set(self.cache_key, price, timeout=35)
             return price
         else:
