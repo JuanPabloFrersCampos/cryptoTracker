@@ -1,0 +1,1306 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-12-02T23:24:54.765Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "ETH",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-12-02T23:25:13.267Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "ETH +1.34074878 ($4959.0006976104)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-12-02T23:25:27.535Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "ETH +0.581 ($1996.79242)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-12-03T00:19:25.475Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "NEXO",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-12-03T00:19:41.858Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "NEXO +31.87 ($44.9367)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-12-03T00:19:52.059Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "NEXO +10.27 ($14.1726)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-12-03T00:20:01.539Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "NEXO +730.99 ($1001.4563)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-12-03T00:34:40.792Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "BNB",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-12-03T00:34:43.300Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "BTC",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-12-03T00:35:22.167Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "BTC +0.0742 ($7135.3688)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-12-03T00:36:02.485Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "BNB +2.29 ($1494.2250)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-12-03T18:34:12.571Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "every 30 seconds",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-12-03T18:34:27.932Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "updateCryptosCotizations: every 30 seconds",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-12-03T18:58:05.254Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "updateCryptosCotizations: every 30 seconds",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Task (registered)\", \"Task (custom)\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-12-03T19:25:47.865Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "updateCryptosCotizations: every 30 seconds",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2024-12-03T19:27:33.400Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "updateCryptosCotizations: every 30 seconds",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2024-12-03T19:27:55.947Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "every 30 seconds",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2024-12-03T19:27:58.972Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "every 30 seconds",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2024-12-03T19:28:16.503Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "updateCryptosCotizations: every 30 seconds",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2024-12-04T18:01:34.365Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "updateCryptosCotizations: every 30 seconds",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Task (registered)\", \"Task (custom)\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2024-12-04T18:33:46.644Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "NEXO",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2024-12-04T19:54:37.693Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "NEXO",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2024-12-04T19:55:26.936Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "NEXO +31.87 ($44.9367)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2024-12-04T19:55:49.992Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "NEXO +10.27 ($14.1726)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2024-12-04T19:56:00.624Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "NEXO +730.99 ($1001.4563)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2024-12-04T21:40:48.317Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "DOGE",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2024-12-04T21:42:04.042Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "DOGE",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2024-12-04T21:43:15.217Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "PEPE",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2024-12-04T21:47:10.309Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "PEPE",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2024-12-04T23:26:09.810Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "ETH +1.0000 ($1.000000000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "NEXO +730.9900 ($1001.456300000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "NEXO +10.2700 ($14.172600000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "NEXO +31.8700 ($44.936700000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "BNB +2.2900 ($1494.225000000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "BTC +0.0742 ($7135.368800000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "ETH +0.5810 ($1996.792420000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2024-12-05T17:53:25.971Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "ETH +1.3407 ($4958.820276000000)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add crypto",
+      "content_type": 7,
+      "codename": "add_crypto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change crypto",
+      "content_type": 7,
+      "codename": "change_crypto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete crypto",
+      "content_type": 7,
+      "codename": "delete_crypto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view crypto",
+      "content_type": 7,
+      "codename": "view_crypto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add operation",
+      "content_type": 8,
+      "codename": "add_operation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change operation",
+      "content_type": 8,
+      "codename": "change_operation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete operation",
+      "content_type": 8,
+      "codename": "delete_operation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view operation",
+      "content_type": 8,
+      "codename": "view_operation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add crontab",
+      "content_type": 9,
+      "codename": "add_crontabschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change crontab",
+      "content_type": 9,
+      "codename": "change_crontabschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete crontab",
+      "content_type": 9,
+      "codename": "delete_crontabschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view crontab",
+      "content_type": 9,
+      "codename": "view_crontabschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add interval",
+      "content_type": 10,
+      "codename": "add_intervalschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change interval",
+      "content_type": 10,
+      "codename": "change_intervalschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete interval",
+      "content_type": 10,
+      "codename": "delete_intervalschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view interval",
+      "content_type": 10,
+      "codename": "view_intervalschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add periodic task",
+      "content_type": 11,
+      "codename": "add_periodictask"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change periodic task",
+      "content_type": 11,
+      "codename": "change_periodictask"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete periodic task",
+      "content_type": 11,
+      "codename": "delete_periodictask"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view periodic task",
+      "content_type": 11,
+      "codename": "view_periodictask"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add periodic task track",
+      "content_type": 12,
+      "codename": "add_periodictasks"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change periodic task track",
+      "content_type": 12,
+      "codename": "change_periodictasks"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete periodic task track",
+      "content_type": 12,
+      "codename": "delete_periodictasks"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view periodic task track",
+      "content_type": 12,
+      "codename": "view_periodictasks"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add solar event",
+      "content_type": 13,
+      "codename": "add_solarschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change solar event",
+      "content_type": 13,
+      "codename": "change_solarschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete solar event",
+      "content_type": 13,
+      "codename": "delete_solarschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view solar event",
+      "content_type": 13,
+      "codename": "view_solarschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add clocked",
+      "content_type": 14,
+      "codename": "add_clockedschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change clocked",
+      "content_type": 14,
+      "codename": "change_clockedschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete clocked",
+      "content_type": 14,
+      "codename": "delete_clockedschedule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view clocked",
+      "content_type": 14,
+      "codename": "view_clockedschedule"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$FigV9MJIxU0hktPZBdw3uU$IJ+aytUvN0HrxK7Iae9elFh7Io4/i16YPmCsyQxiGDc=",
+      "last_login": "2024-12-02T23:24:44.515Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-12-02T20:47:41.031Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "tracker",
+      "model": "crypto"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "tracker",
+      "model": "operation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "django_celery_beat",
+      "model": "crontabschedule"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "django_celery_beat",
+      "model": "intervalschedule"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "django_celery_beat",
+      "model": "periodictask"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "django_celery_beat",
+      "model": "periodictasks"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "django_celery_beat",
+      "model": "solarschedule"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "django_celery_beat",
+      "model": "clockedschedule"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "uoeu7lqyp4x5bcyfj4w5ri7zsyyupnif",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCwwBSX7nsGMgODVA0kpV0Z765NutDtf-_9lwi4rSVsnZcwJ3ERWpx-N8L44LqDdMd6azK2ui4zyV2RB-1yaomf18P9OyjYy7dmVJm9GcF4QoaBoouKHSWMpLJ2I8DZsLXJY2YARcZYh1ZrdjB4r8X7AwYxOBI:1tIFmW:UuUo15HaAR67836Ow0WJGn1EVKQIEQUvIzrUWEByJIM",
+      "expire_date": "2024-12-16T23:24:44.521Z"
+    }
+  },
+  {
+    "model": "tracker.crypto",
+    "pk": 1,
+    "fields": {
+      "symbol": "ETH"
+    }
+  },
+  {
+    "model": "tracker.crypto",
+    "pk": 3,
+    "fields": {
+      "symbol": "BNB"
+    }
+  },
+  {
+    "model": "tracker.crypto",
+    "pk": 4,
+    "fields": {
+      "symbol": "BTC"
+    }
+  },
+  {
+    "model": "tracker.crypto",
+    "pk": 5,
+    "fields": {
+      "symbol": "NEXO"
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 1,
+    "fields": {
+      "symbol": 1,
+      "cryptoQuantity": 1.3407,
+      "price": 3698.68,
+      "isSell": false
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 2,
+    "fields": {
+      "symbol": 1,
+      "cryptoQuantity": 0.581,
+      "price": 3436.82,
+      "isSell": false
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 6,
+    "fields": {
+      "symbol": 4,
+      "cryptoQuantity": 0.0742,
+      "price": 96164,
+      "isSell": false
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 7,
+    "fields": {
+      "symbol": 3,
+      "cryptoQuantity": 2.29,
+      "price": 652.5,
+      "isSell": false
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 8,
+    "fields": {
+      "symbol": 5,
+      "cryptoQuantity": 31.87,
+      "price": 1.41,
+      "isSell": false
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 9,
+    "fields": {
+      "symbol": 5,
+      "cryptoQuantity": 10.27,
+      "price": 1.38,
+      "isSell": false
+    }
+  },
+  {
+    "model": "tracker.operation",
+    "pk": 10,
+    "fields": {
+      "symbol": 5,
+      "cryptoQuantity": 730.99,
+      "price": 1.37,
+      "isSell": false
+    }
+  },
+  {
+    "model": "django_celery_beat.intervalschedule",
+    "pk": 1,
+    "fields": {
+      "every": 30,
+      "period": "seconds"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 1,
+    "fields": {
+      "minute": "0",
+      "hour": "4",
+      "day_of_month": "*",
+      "month_of_year": "*",
+      "day_of_week": "*",
+      "timezone": "UTC"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictasks",
+    "pk": 1,
+    "fields": {
+      "last_update": "2024-12-05T17:53:29.505Z"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 2,
+    "fields": {
+      "name": "updateCryptosCotizations",
+      "task": "tracker.tasks.fetchCryptoPricesBackgroundTask",
+      "interval": 1,
+      "crontab": null,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": "2024-12-05T00:24:22.783Z",
+      "total_run_count": 648,
+      "date_changed": "2024-12-05T00:24:44.219Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 3,
+    "fields": {
+      "name": "celery.backend_cleanup",
+      "task": "celery.backend_cleanup",
+      "interval": null,
+      "crontab": 1,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": 43200,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2024-12-04T21:47:22.649Z",
+      "description": ""
+    }
+  }
+]
