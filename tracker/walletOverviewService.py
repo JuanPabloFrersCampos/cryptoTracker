@@ -61,4 +61,4 @@ class WalletOverviewService():
             if details.get('currentBalance') == "Non available":
                 continue
             totalBalance += details.get('currentBalance')
-        return totalBalance
+        return round(totalBalance, 2)
