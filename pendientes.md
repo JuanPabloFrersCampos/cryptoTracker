@@ -1,9 +1,8 @@
 Deuda técnica
-- Migrar a MySQL
-- Inyección de dependencias
-- Tests unitarios
 - Refactor de la wallet
+- Deployear
 - Handleo errores API externa
+- Inyección de dependencias
 
 Performance
 
@@ -22,4 +21,4 @@ HECHO:
 - Caché cotización cryptos: Hacer cada 30 segundos el hit para todas las crypto registradas. > Resultado: Se bajó de 600ms a 8ms
 - Caché cryptos disponibles:
   - Al consultar las cryptos creadas en la instancia, hacerlo contra un caché y no contra la BDD. Invalidar el caché al crear una nueva crypto. > No pude medir mejora en la performance, pero fue baja al haber solo 3 entradas
-
+- Migrar a MySQL
