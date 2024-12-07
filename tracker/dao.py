@@ -1,5 +1,6 @@
 from .models import Operation, Crypto
 from django.core.cache import cache
+from django.db.models import QuerySet
 
 class Dao():
     def get_operations_by_symbol(self, symbolName):
@@ -22,3 +23,6 @@ class Dao():
         for symbol in self.get_all_symbols():
             operationsBySimbol.append(self.get_operations_by_symbol(symbol))
         return operationsBySimbol
+    
+    def get_user_portfolio(self) -> QuerySet:
+        return Operation.objects.all() #esto devuelve todo, en el futuro cambiar

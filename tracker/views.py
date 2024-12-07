@@ -36,6 +36,7 @@ class WalletViewApi(View):
     def get(self, request):
         dao = Dao()
         walletOverviewService = WalletOverviewService()
+        #llamar a una clase que se termine devolviendo el JSON procesado
         operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
         walletOverview = walletOverviewService.process(operationsBySimbol)
         return HttpResponse(
