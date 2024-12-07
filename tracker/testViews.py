@@ -7,8 +7,8 @@ class WalletApiViewTests(TestCase):
     fixtures = ['basicCryptosWithTransactions.json']
 
     @patch.object(WalletOverviewService, 'getSymbolMarketPrice')
-    def test_wallet_overview_api(self, mock_getSymbolMarketPrice):
-        mock_getSymbolMarketPrice.side_effect = lambda symbol: {
+    def test_wallet_overview_api(self, walletOverviewServiceMock_getSymbolMarketPrice):
+        walletOverviewServiceMock_getSymbolMarketPrice.side_effect = lambda symbol: {
             'BTC': 101189.11,
             'ETH': 3897.85,
             'BNB': 730.69,
