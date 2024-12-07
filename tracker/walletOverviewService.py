@@ -12,7 +12,7 @@ class WalletOverviewService():
             symbolMarketPrice = self.getSymbolMarketPrice(symbol)
             currentBalance = self.getCurrentBalance(amountOfHoldedCrypto, symbolMarketPrice, totalCost, totalProceeds)
             walletOverview[str(symbol)] = { # Hay forma de no castearlo?
-                'holdings': amountOfHoldedCrypto,
+                'holdings': round(amountOfHoldedCrypto, 4),
                 'symbolMarketPrice': round(symbolMarketPrice, 2),
                 'totalCost': round(totalCost, 2),
                 'holdingsValue': round(float(amountOfHoldedCrypto) * float(symbolMarketPrice), 2),

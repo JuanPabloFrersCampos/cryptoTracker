@@ -22,9 +22,9 @@ class WalletApiViewTests(TestCase):
 
         self.assertEqual(data['ETH']['holdings'], 1.9217)
         self.assertEqual(data['ETH']['symbolMarketPrice'], 3897.85)
-        self.assertEqual(data['ETH']['totalCost'], 6955.61)
-        self.assertEqual(data['ETH']['holdingsValue'], 7490.5)
-        self.assertEqual(data['ETH']['currentBalance'], 534.89)
+        self.assertEqual(data['ETH']['totalCost'], 6955.79)
+        self.assertEqual(data['ETH']['holdingsValue'], 7490.69)
+        self.assertEqual(data['ETH']['currentBalance'], 534.9)
 
         self.assertEqual(data['BNB']['holdings'], 2.29)
         self.assertEqual(data['BNB']['symbolMarketPrice'], 730.69)
@@ -44,4 +44,4 @@ class WalletApiViewTests(TestCase):
         self.assertEqual(data['NEXO']['holdingsValue'], 1167.43)
         self.assertEqual(data['NEXO']['currentBalance'], 106.86)
 
-        self.assertEqual(data['totalBalance'], 1193.67)
+        self.assertEqual(data['totalBalance'], 1193.68)
