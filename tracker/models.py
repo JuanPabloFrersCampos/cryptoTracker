@@ -27,4 +27,4 @@ class Operation(models.Model):
     isSell = models.BooleanField()
     def __str__(self):
         symbol = '-' if self.isSell else '+'
-        return str(self.symbol) + ' ' + str(symbol) + str(self.cryptoQuantity) + str(' ($') + str(self.cryptoQuantity * self.price) + str(')')
+        return str(self.symbol) + ' ' + str(symbol) + str(self.cryptoQuantity)
