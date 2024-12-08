@@ -1,8 +1,9 @@
-class OperationSetBySymbolModel:
+class SymbolSummaryModel:
     def __init__(self):
         self.__holdings = None
         self.__symbol_market_price = None
         self.__total_cost = None
+        self.__total_proceeds = None
         self.__holdings_value = None
         self.__current_balance = None
 
@@ -35,3 +36,15 @@ class OperationSetBySymbolModel:
 
     def set_current_balance(self, value):
         self.__current_balance = value
+
+    def set_total_proceeds(self, value):
+        self.__total_proceeds = value
+
+    def to_dict(self):
+        return {
+            'holdings': self.__holdings,
+            'symbol_market_price': self.__symbol_market_price,
+            'total_cost': self.__total_cost,
+            'holdings_value': self.__holdings_value,
+            'current_balance': self.__current_balance
+        }

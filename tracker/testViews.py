@@ -1,6 +1,7 @@
 from django.test import TestCase
-from .walletOverviewService import WalletOverviewService
-from unittest.mock import patch
+from tracker.portfolio.symbol_summary_builder import SymbolSummaryBuilder
+from tracker.externalCryptoPriceFetcher import ExternalCryptoPriceFetcher
+from unittest.mock import patch, MagicMock
 from django.urls import reverse
 
 class WalletApiViewTests(TestCase):
@@ -19,29 +20,30 @@ class WalletApiViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
         data = response.json()
+        holdings = {list(holding.keys())[0]: holding[list(holding.keys())[0]] for holding in data['holdings']}
 
-        self.assertEqual(data['ETH']['holdings'], 1.9217)
-        self.assertEqual(data['ETH']['symbolMarketPrice'], 3897.85)
-        self.assertEqual(data['ETH']['totalCost'], 6955.79)
-        self.assertEqual(data['ETH']['holdingsValue'], 7490.69)
-        self.assertEqual(data['ETH']['currentBalance'], 534.9)
+        self.assertEqual(holdings['ETH']['holdings'], 1.9217)
+        self.assertEqual(holdings['ETH']['symbol_market_price'], 4000.5)
+        self.assertEqual(holdings['ETH']['total_cost'], 6955.79)
+        self.assertEqual(holdings['ETH']['holdings_value'], 7687.45)
+        self.assertEqual(holdings['ETH']['current_balance'], 730.66)
 
-        self.assertEqual(data['BNB']['holdings'], 2.29)
-        self.assertEqual(data['BNB']['symbolMarketPrice'], 730.69)
-        self.assertEqual(data['BNB']['totalCost'], 1494.23)
-        self.assertEqual(data['BNB']['holdingsValue'], 1673.28)
-        self.assertEqual(data['BNB']['currentBalance'], 179.06)
+        self.assertEqual(holdings['BTC']['holdings'], 0.0742)
+        self.assertEqual(holdings['BTC']['symbol_market_price'], 100027.29)
+        self.assertEqual(holdings['BTC']['total_cost'], 7135.37)
+        self.assertEqual(holdings['BTC']['holdings_value'], 7422.02)
+        self.assertEqual(holdings['BTC']['current_balance'], 286.65)
 
-        self.assertEqual(data['BTC']['holdings'], 0.0742)
-        self.assertEqual(data['BTC']['symbolMarketPrice'], 101189.11)
-        self.assertEqual(data['BTC']['totalCost'], 7135.37)
-        self.assertEqual(data['BTC']['holdingsValue'], 7508.23)
-        self.assertEqual(data['BTC']['currentBalance'], 372.86)
+        self.assertEqual(holdings['BNB']['holdings'], 2.29)
+        self.assertEqual(holdings['BNB']['symbol_market_price'], 741.89)
+        self.assertEqual(holdings['BNB']['total_cost'], 1494.23)
+        self.assertEqual(holdings['BNB']['holdings_value'], 1698.93)
+        self.assertEqual(holdings['BNB']['current_balance'], 204.7)
 
-        self.assertEqual(data['NEXO']['holdings'], 773.13)
-        self.assertEqual(data['NEXO']['symbolMarketPrice'], 1.51)
-        self.assertEqual(data['NEXO']['totalCost'], 1060.57)
-        self.assertEqual(data['NEXO']['holdingsValue'], 1167.43)
-        self.assertEqual(data['NEXO']['currentBalance'], 106.86)
+        self.assertEqual(holdings['NEXO']['holdings'], 773.13)
+        self.assertEqual(holdings['NEXO']['symbol_market_price'], 1.52)
+        self.assertEqual(holdings['NEXO']['total_cost'], 1060.57)
+        self.assertEqual(holdings['NEXO']['holdings_value'], 1175.16)
+        self.assertEqual(holdings['NEXO']['current_balance'], 114.59)
 
-        self.assertEqual(data['totalBalance'], 1193.68)
+        self.assertEqual(data['total_balance'], 1336.6)
