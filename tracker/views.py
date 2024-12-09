@@ -1,11 +1,12 @@
 from django.views import View
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
+from tracker.portfolio.portfolio_endpoint_handler import PortfolioEndpointHandler
 from .models import Crypto
 import json
 from .forms import cryptoOperationForm
-from .dao import Dao
 from .walletOverviewService import WalletOverviewService
+from .dao import Dao
 
 class IndexCryptosView(View):
     def get(self, request):
@@ -32,13 +33,12 @@ class WalletView(View):
         walletOverview = walletOverviewService.process(operationsBySimbol)
         return render(request, "walletOverview.html", {"walletOverview": walletOverview})
     
-class WalletViewApi(View):
-    def get(self, request):
-        dao = Dao()
-        walletOverviewService = WalletOverviewService()
-        operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
-        walletOverview = walletOverviewService.process(operationsBySimbol)
+class portfolioEndpoint(View):
+    def get(self, request: HttpRequest):
+        handler = PortfolioEndpointHandler(self.request)
+        portfolio_summary = handler.process()
+        portfolio_summary_dict = portfolio_summary.to_dict()
         return HttpResponse(
-            json.dumps(walletOverview),
+            json.dumps(portfolio_summary_dict),
             content_type="application/json"
         )
