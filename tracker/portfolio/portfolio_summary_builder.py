@@ -3,7 +3,7 @@ from tracker.abstractModels.operation_model import OperationModel
 from tracker.abstractModels.portfolio_summary_model import PortfolioSummaryModel
 from tracker.portfolio.symbol_summary_builder import SymbolSummaryBuilder
 
-class PortfolioSummaryDirector:
+class PortfolioSummaryBuilder:
     def __init__(self, operations_grouped_by_symbol:  Dict[str, List[OperationModel]]):
         self.__operations_grouped_by_symbol = operations_grouped_by_symbol
 
