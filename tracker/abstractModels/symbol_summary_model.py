@@ -1,3 +1,5 @@
+from typing import NoReturn
+
 class SymbolSummaryModel:
     def __init__(self):
         self.__holdings = None
@@ -40,7 +42,7 @@ class SymbolSummaryModel:
     def set_total_proceeds(self, value):
         self.__total_proceeds = value
 
-    def to_dict(self):
+    def to_dict(self) -> NoReturn:
         return {
             'holdings': self.__holdings,
             'symbol_market_price': self.__symbol_market_price,

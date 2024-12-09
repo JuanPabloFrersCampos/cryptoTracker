@@ -1,7 +1,8 @@
-from typing import List, LiteralString
+from typing import List, LiteralString, NoReturn
 from tracker.abstractModels.symbol_summary_model import SymbolSummaryModel
 from tracker.abstractModels.operation_model import OperationModel
 from tracker.externalCryptoPriceFetcher import ExternalCryptoPriceFetcher
+from typeguard import typechecked
 
 class SymbolSummaryBuilder:
     def __init__(self, symbol: LiteralString, operations_set: List[OperationModel]):
@@ -14,15 +15,16 @@ class SymbolSummaryBuilder:
         self.__symbol_market_price = None
         self.__current_balance = None
 
-    def process(self) -> SymbolSummaryModel:
-        self.set_holdings()
-        self.set_total_cost_and_proceeds()
-        self.set_symbol_market_price()
-        self.set_holdings_value()
-        self.set_current_balance()
+    #@typechecked
+    def process(self) -> NoReturn: # no funciona el typeguard
+        self.__set_holdings()
+        self.__set_total_cost_and_proceeds()
+        self.__set_symbol_market_price()
+        self.__set_holdings_value()
+        self.__set_current_balance()
         return self.__symbol_summary_model
 
-    def set_holdings(self):
+    def __set_holdings(self) -> NoReturn:
         holdings = 0
         for operation in self.__operations_set:
             if operation.isSell:
@@ -32,7 +34,7 @@ class SymbolSummaryBuilder:
         self.__holdings = (round(holdings, 4))
         self.__symbol_summary_model.set_holdings(round(holdings, 4))
 
-    def set_total_cost_and_proceeds(self):
+    def __set_total_cost_and_proceeds(self) -> NoReturn:
         total_cost = 0
         proceeds = 0
         holdings = 0
@@ -50,24 +52,24 @@ class SymbolSummaryBuilder:
         self.__total_cost = round(total_cost, 2)
         self.__total_proceeds = round(proceeds, 2)
 
-    def set_symbol_market_price(self):
+    def __set_symbol_market_price(self) -> NoReturn:
         externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(symbol = self.__symbol)
         self.__symbol_summary_model.set_symbol_market_price(round(externalCryptoPriceFetcher.getPrice(), 2))
         self.__symbol_market_price = round(externalCryptoPriceFetcher.getPrice(), 2)
 
-    def set_holdings_value(self):
+    def __set_holdings_value(self) -> NoReturn:
         self.__symbol_summary_model.set_holdings_value(round(self.__holdings * self.__symbol_market_price, 2))
 
-    def set_current_balance(self):
+    def __set_current_balance(self) -> NoReturn:
         if not self.__symbol_market_price:
             self.__symbol_summary_model.set_current_balance("Non available") # arreglar
         currentValue = float(self.__holdings) * float(self.__symbol_market_price)
         self.__symbol_summary_model.set_current_balance(round(currentValue + self.__total_proceeds - self.__total_cost, 2))
 
-    def get_operations_set(self):
+    def get_operations_set(self) -> NoReturn:
         return self.__operations_set
 
-    def get_holdings(self):
+    def get_holdings(self) -> NoReturn:
         return self.__holdings
 
     def get_total_cost(self):
