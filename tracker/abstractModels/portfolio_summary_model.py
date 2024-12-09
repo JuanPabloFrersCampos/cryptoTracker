@@ -17,12 +17,10 @@ class PortfolioSummaryModel:
         return self.__symbols_summary
 
     def to_dict(self):
-        summary_dict = []
+        summary_dict = {}
         for symbol, symbol_summary in self.__symbols_summary.items():
-            summary_dict.append({
-                symbol: symbol_summary.to_dict()
-            })
+            summary_dict[symbol] = symbol_summary.to_dict()
         return {
-            'holdings': summary_dict,
+            'data': summary_dict,
             'total_balance': self.__total_balance
         }
