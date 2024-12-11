@@ -5,7 +5,6 @@ from tracker.portfolio.portfolio_endpoint_handler import PortfolioEndpointHandle
 from .models import Crypto
 import json
 from .forms import cryptoOperationForm
-from .walletOverviewService import WalletOverviewService
 from .dao import Dao
 
 class IndexCryptosView(View):
@@ -24,14 +23,6 @@ class OperationView(View):
             form.save()
             return HttpResponse('Created')
         return render(request, "cryptoOperation.html", {"form": form})
-
-class WalletView(View):
-    def get(self, request):
-        dao = Dao()
-        walletOverviewService = WalletOverviewService()
-        operationsBySimbol = dao.get_all_operations_grouping_by_symbol()
-        walletOverview = walletOverviewService.process(operationsBySimbol)
-        return render(request, "walletOverview.html", {"walletOverview": walletOverview})
     
 class portfolioEndpoint(View):
     def get(self, request: HttpRequest):
