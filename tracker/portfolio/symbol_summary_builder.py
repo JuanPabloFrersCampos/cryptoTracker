@@ -1,7 +1,7 @@
 from typing import List, LiteralString, NoReturn
 from tracker.abstractModels.symbol_summary_model import SymbolSummaryModel
 from tracker.abstractModels.operation_model import OperationModel
-from tracker.externalCryptoPriceFetcher import ExternalCryptoPriceFetcher
+from tracker.external_crypto_price_fetcher import ExternalCryptoPriceFetcher
 from typeguard import typechecked
 
 class SymbolSummaryBuilder:
@@ -52,10 +52,12 @@ class SymbolSummaryBuilder:
         self.__total_cost = round(total_cost, 2)
         self.__total_proceeds = round(proceeds, 2)
 
+    # FIXME: Temporal patch to fix tests's mocking in external API
     def __set_symbol_market_price(self) -> NoReturn:
-        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher(symbol = self.__symbol)
-        self.__symbol_summary_model.set_symbol_market_price(round(externalCryptoPriceFetcher.getPrice(), 2))
-        self.__symbol_market_price = round(externalCryptoPriceFetcher.getPrice(), 2)
+        externalCryptoPriceFetcher = ExternalCryptoPriceFetcher()
+        market_price = round(externalCryptoPriceFetcher.getPrice(self.__symbol), 2)
+        self.__symbol_summary_model.set_symbol_market_price(market_price)
+        self.__symbol_market_price = market_price
 
     def __set_holdings_value(self) -> NoReturn:
         self.__symbol_summary_model.set_holdings_value(round(self.__holdings * self.__symbol_market_price, 2))
