@@ -51,15 +51,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# revisar si no esta´dem a´s
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'LOCATION': 'redis://redis:6379/1',
     }
 }
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://redis:6379'
 
 ROOT_URLCONF = 'cryptotracker.urls'
 
@@ -88,10 +87,10 @@ WSGI_APPLICATION = 'cryptotracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolioTracker',
-        'USER': 'juan',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'NAME': 'portfolio_container_db',
+        'USER': 'mysql',
+        'PASSWORD': 'mysql',
+        'HOST': 'mysql_container',
         'PORT': '3306'
     }
 }

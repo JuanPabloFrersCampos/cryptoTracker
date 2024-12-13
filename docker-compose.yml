@@ -1,0 +1,66 @@
+name: portfolio_tracker
+
+services:
+  portfolio_tracker:
+  # Buildea las imágenes de todos los Dockerfiles
+    build: .
+    image: portfolio_tracker_image
+    container_name: portfolio_tracker_container
+    command: ./entrypoint.sh
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql
+    container_name: mysql_container
+    ports: 
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=portfolio_container_db
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+    restart: unless-stopped
+    #Persistir información después de que se elimine el container
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis_container
+    restart: unless-stopped
+    ports:
+      - "6379:6379" # no es necesario ya que todo va a estar dentro del mismo container
+    volumes:
+      - redis_data:/data
+
+  celery_worker:
+    image: portfolio_tracker_image
+    container_name: celery_worker_container
+    command: celery -A cryptotracker worker -E -l info
+    volumes:
+      - .:/app
+    depends_on:
+      - mysql
+      - redis
+      - portfolio_tracker
+
+  celery_beat:
+    image: portfolio_tracker_image
+    container_name: celery_beat_container
+    command: celery -A cryptotracker beat -l warning --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - mysql
+      - portfolio_tracker
+
+volumes:
+  mysql_data:
+  redis_data:
