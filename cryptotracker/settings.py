@@ -35,9 +35,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['app-production-2fb8.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['cryptotracker-production-0377.up.railway.app', 'localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://app-production-2fb8.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://cryptotracker-production-0377.up.railway.app']
 
 
 # Application definition
