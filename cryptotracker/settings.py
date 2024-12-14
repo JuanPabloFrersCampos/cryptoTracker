@@ -65,8 +65,7 @@ MIDDLEWARE = [
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://redis:6379/1', # capaz está de más
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache'
     }
 }
 
