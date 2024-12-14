@@ -22,6 +22,7 @@ RUN pip install -r requirements.txt
 
 # Copiar todos los files del host application al WORKDIR del container
 COPY . .
+
 RUN chmod +x ./entrypoint.sh
 
 # No es necesario realmente

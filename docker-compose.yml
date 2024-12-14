@@ -11,6 +11,8 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+    env_file:
+      - ./.env
     depends_on:
       - mysql
       - redis
@@ -45,6 +47,8 @@ services:
     command: celery -A cryptotracker worker -E -l info
     volumes:
       - .:/app
+    env_file:
+      - ./.env
     depends_on:
       - mysql
       - redis
@@ -56,6 +60,8 @@ services:
     command: celery -A cryptotracker beat -l warning --scheduler django_celery_beat.schedulers:DatabaseScheduler
     volumes:
       - .:/app
+    env_file:
+      - ./.env
     depends_on:
       - redis
       - mysql

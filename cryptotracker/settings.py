@@ -11,19 +11,29 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from environ import Env
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+Env.read_env(BASE_DIR / '.env')
+env = Env()
+ENVIRONMENT = env('ENVIRONMENT')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5085_^^glgyrv42p&6_e-)&u=tjv&k(kx(++zsaid-^dg%$q%u'
+SECRET_KEY = env('SECRET_KEY', default="secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -49,16 +59,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://redis:6379/1',
+        'LOCATION': 'redis://redis:6379/1', # capaz está de más
     }
 }
-
-CELERY_BROKER_URL = 'redis://redis:6379'
 
 ROOT_URLCONF = 'cryptotracker.urls'
 
@@ -84,17 +93,24 @@ WSGI_APPLICATION = 'cryptotracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio_container_db',
-        'USER': 'mysql',
-        'PASSWORD': 'mysql',
-        'HOST': 'mysql_container',
-        'PORT': '3306'
+if ENVIRONMENT == 'development':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'portfolio_container_db',
+            'USER': 'mysql',
+            'PASSWORD': 'mysql',
+            'HOST': 'mysql_container',
+            'PORT': '3306'
+        }
     }
-}
-
+    CELERY_BROKER_URL = 'redis://redis:6379'
+else:
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+    CELERY_BROKER_URL = env('REDIS_URL', default='redis://')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -131,6 +147,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [ BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
