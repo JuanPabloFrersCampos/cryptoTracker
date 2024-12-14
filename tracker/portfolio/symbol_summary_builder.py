@@ -2,7 +2,6 @@ from typing import List, LiteralString, NoReturn
 from tracker.abstractModels.symbol_summary_model import SymbolSummaryModel
 from tracker.abstractModels.operation_model import OperationModel
 from tracker.external_crypto_price_fetcher import ExternalCryptoPriceFetcher
-from typeguard import typechecked
 
 class SymbolSummaryBuilder:
     def __init__(self, symbol: LiteralString, operations_set: List[OperationModel]):
@@ -16,7 +15,7 @@ class SymbolSummaryBuilder:
         self.__current_balance = None
 
     #@typechecked
-    def process(self) -> NoReturn: # no funciona el typeguard
+    def process(self) -> NoReturn:
         self.__set_holdings()
         self.__set_total_cost_and_proceeds()
         self.__set_symbol_market_price()
