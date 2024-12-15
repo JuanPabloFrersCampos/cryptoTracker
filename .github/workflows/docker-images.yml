@@ -1,0 +1,15 @@
+name: Publish Docker Image
+
+on:
+    push
+
+jobs:
+    build_and_publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Build and push Docker Image
+              run:
+                docker login ghcr.io --username JuanPabloFrersCampos --password ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
+                docker build . -t ghcr.io/juanpablofrerscampos/portfolio-tracker
+                docker push ghcr.io/juanpablofrerscampos/portfolio-tracker

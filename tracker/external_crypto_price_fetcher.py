@@ -15,6 +15,7 @@ class ExternalCryptoPriceFetcher:
     def getPrice(self, symbol: LiteralString): 
         catchedCotization = cache.get(f'crypto_cotizations_{symbol}')
         if catchedCotization:
+            print('Cache hit')
             return catchedCotization
         else:
             return self.fetchPrices(symbol)
