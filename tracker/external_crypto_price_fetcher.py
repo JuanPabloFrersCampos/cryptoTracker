@@ -29,7 +29,7 @@ class ExternalCryptoPriceFetcher:
             cache.set(f'crypto_cotizations_{symbol}', price, timeout=35)
             return price
         else:
-            cache.set(self.cache_key, None, timeout=35) # Temporal para que no afecte NEXO
+            cache.set(f'crypto_cotizations_{symbol}', None, timeout=35) # Temporal para que no afecte NEXO
             print("Error:", response.status_code, response.text)
 
     # def getCryptoSymbols(self):

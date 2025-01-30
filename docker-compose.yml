@@ -44,7 +44,7 @@ services:
   celery_worker:
     image: portfolio_tracker_image
     container_name: celery_worker_container
-    command: celery -A cryptotracker worker -E -l info
+    command: celery -A cryptotracker worker -E -l info --uid=nobody --concurrency=4
     volumes:
       - .:/app
     env_file:
