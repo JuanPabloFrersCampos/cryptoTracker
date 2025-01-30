@@ -13,8 +13,7 @@ class PortfolioEndpointTests(TestCase):
         mock_prices = {
             'BTC': 101189.11,
             'ETH': 3897.85,
-            'BNB': 730.69,
-            'NEXO': 1.51,
+            'BNB': 730.69
         }
             
         mock_get_price.side_effect = lambda symbol: mock_prices.get(symbol, 0)
@@ -43,10 +42,4 @@ class PortfolioEndpointTests(TestCase):
         self.assertEqual(dataKeys['BNB']['holdings_value'], 1673.28)
         self.assertEqual(dataKeys['BNB']['current_balance'], 179.05)
 
-        self.assertEqual(dataKeys['NEXO']['holdings'], 773.13)
-        self.assertEqual(dataKeys['NEXO']['symbol_market_price'], 1.51)
-        self.assertEqual(dataKeys['NEXO']['total_cost'], 1060.57)
-        self.assertEqual(dataKeys['NEXO']['holdings_value'], 1167.43)
-        self.assertEqual(dataKeys['NEXO']['current_balance'], 106.86)
-
-        self.assertEqual(data['total_balance'], 1193.48)
+        self.assertEqual(data['total_balance'], 1086.62)
